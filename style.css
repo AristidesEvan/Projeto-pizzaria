@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(51, 51, 51);
+    color: rgb(202, 202, 202);
+}
+
+aside {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+
+#menu-opener {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding: 10px 10px 0 0;
+}
+
+#menu-area {
+    background-color: rgb(211, 211, 211);
+    width: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 500ms;
+}
+
+.abrindo-menu {
+    width: 200px !important;
+}
+
+#menu-area ul, #menu-area li {
+    list-style: none;
+    padding: 0;
+}
+
+#menu-area li {
+    color: rgb(41, 41, 41);
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+    display: block;
+}
+
+#menu-area li:hover {
+    background-color: #DDD;
+}

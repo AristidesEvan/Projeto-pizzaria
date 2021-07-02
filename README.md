@@ -1,3 +1,1 @@
-Meu primeiro progeto no git!
-
-Estudando Files.
+Meu primeiro projeto no git!

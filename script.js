@@ -1,5 +1,8 @@
-function enviar() {
-    let arquivo = document.getElementById('arquivo').files[0]
+let c = (el)=> document.querySelector(el)
+let cs = (el)=> document.querySelector(el)
 
-    console.log(arquivo)
-}
+pizzaJson.map((item, index)=>{
+    let pizzaItem = c(".pizza-item").cloneNode(true)
+
+    c(".pizza-area").append(pizzaItem)
+})

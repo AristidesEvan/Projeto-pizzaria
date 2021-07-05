@@ -3,6 +3,8 @@ let modalQt = 1;
 let c = (el)=> document.querySelector(el);
 let cs = (el)=> document.querySelectorAll(el);
 
+//Listagem das pizzas!
+
 pizzaJson.map((item, index)=>{
     let pizzaItem = c(".pizza-item").cloneNode(true);
 
@@ -46,3 +48,35 @@ pizzaJson.map((item, index)=>{
 
     c(".pizza-area").append(pizzaItem);
 });
+
+//Evento do madal
+
+function closeModal() {
+    c('.pizzaWindowArea').style.opacity = 0;
+    setTimeout(()=>{
+        c('.pizzaWindowArea').style.display = 'none';
+    }, 500);
+}
+
+cs('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton').forEach((item)=>{
+    item.addEventListener('click', closeModal);
+});
+
+c('.pizzaInfo--qtmenos').addEventListener('click', ()=>{
+    if(modalQt >= 2){
+        modalQt--;
+        c('.pizzaInfo--qt').innerHTML = modalQt;
+    }
+});
+c('.pizzaInfo--qtmais').addEventListener('click', ()=>{
+    modalQt++;
+    c('.pizzaInfo--qt').innerHTML = modalQt;
+});
+
+cs('.pizzaInfo--size').forEach((size, sizeIndex)=>{
+    size.addEventListener('click', ()=>{
+        c('.pizzaInfo--size.selected').classList.remove('selected');
+        size.classList.add('selected');
+    });
+});
+
